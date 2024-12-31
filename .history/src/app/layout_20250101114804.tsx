@@ -25,9 +25,6 @@ export default function RootLayout({
   return (
     <html lang="en" translate="no"> {/* Prevent translation of the entire page */}
       <head>
-        <meta charSet="UTF-8" />
-        <meta httpEquiv="Content-Language" content="en" /> {/* Explicitly set content language */}
-        <meta name="google" content="notranslate" /> {/* Inform Google to not translate */}
         <link rel="icon" href="/artyfiji.ico" type="image/x-icon" />
         <title>ArtyFiji</title>
         <meta name="description" content="Discover beautiful artwork and creative expressions on ArtyFiji." />

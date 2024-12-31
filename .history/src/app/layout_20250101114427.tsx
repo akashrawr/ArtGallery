@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ArtyFiji", // This title should be descriptive enough for the app
+  title: "ArtyFiji",  // This title should be descriptive enough for the app
   description: "Discover beautiful artwork and creative expressions on ArtyFiji.", // Updated to provide more context
 };
 
@@ -23,19 +23,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" translate="no"> {/* Prevent translation of the entire page */}
+    <html lang="en">
       <head>
-        <meta charSet="UTF-8" />
-        <meta httpEquiv="Content-Language" content="en" /> {/* Explicitly set content language */}
-        <meta name="google" content="notranslate" /> {/* Inform Google to not translate */}
         <link rel="icon" href="/artyfiji.ico" type="image/x-icon" />
-        <title>ArtyFiji</title>
+        <title>Arty-Fiji</title>
         <meta name="description" content="Discover beautiful artwork and creative expressions on ArtyFiji." />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="notranslate"> {/* Ensure "ArtyFiji" is not translated */}
-          {children}
-        </div>
+        {children}
       </body>
     </html>
   );

@@ -74,7 +74,7 @@ export default function Gallery() {
   return (
     <>
       <Head>
-        <title>ArtyFiji</title>
+        <title className="notranslate">ArtyFiji</title>
         <meta name="description" content="Discover beautiful artwork and creative expressions on ArtyFiji." />
       </Head>
 

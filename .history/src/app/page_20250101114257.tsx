@@ -1,10 +1,11 @@
 'use client'; // This is a client component
 
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import Image from 'next/image';
 import cn from 'classnames';
 import { Dialog, Transition } from '@headlessui/react';
+import { Fragment } from 'react';
 import Head from 'next/head';
 
 // Define your Image type
@@ -60,7 +61,7 @@ export default function Gallery() {
     if (navigator.share) {
       navigator
         .share({
-          title: 'ArtyFiji',
+          title: 'a',
           text: 'rawr',
           url: 'https://artyfiji.vercel.app/',
         })
@@ -74,15 +75,14 @@ export default function Gallery() {
   return (
     <>
       <Head>
-        <title>ArtyFiji</title>
+        <title>a</title>
         <meta name="description" content="Discover beautiful artwork and creative expressions on ArtyFiji." />
       </Head>
 
-      <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:max-w-7xl lg:px-8" translate="no">
+      <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="mb-6 pl-2 border-b-8 border-blue-800 flex items-center lg:items-stretch flex-row">
-          <h1
-            className="select-none transition transform origin-left -skew-x-6 inline-block p-2 text-5xl bg-gradient-to-tr from-blue-800 to-blue-500 text-transparent bg-clip-text font-extrabold notranslate">
-            ArtyFiji
+          <h1 className="select-none transition transform origin-left -skew-x-6 inline-block p-2 text-5xl bg-gradient-to-tr from-blue-800 to-blue-500 text-transparent bg-clip-text font-extrabold uppercase">
+            a
           </h1>
           <div className="justify-end flex flex-1 pt-4 pr-8 pb-4">
             <button
@@ -208,7 +208,7 @@ function BlurImage({ image }: { image: Image }) {
   const [isLoading, setLoading] = useState(true);
 
   return (
-    <a href={image.href} className="group" translate="no">
+    <a href={image.href} className="group">
       <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
         <Image
           alt={image.description}
@@ -222,8 +222,8 @@ function BlurImage({ image }: { image: Image }) {
           onLoadingComplete={() => setLoading(false)}
         />
       </div>
-      <h3 className="mt-4 text-sm text-gray-700 notranslate">{image.description}</h3>
-      <p className="mt-1 text-lg font-medium text-black-1000 font-bold notranslate">{image.title}</p>
+      <h3 className="mt-4 text-sm text-gray-700">{image.description}</h3>
+      <p className="mt-1 text-lg font-medium text-black-1000 font-bold">{image.title}</p>
     </a>
   );
 }
