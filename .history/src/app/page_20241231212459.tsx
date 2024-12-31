@@ -223,7 +223,7 @@ function BlurImage({ image }: { image: Image }) {
         />
       </div>
       <h3 className="mt-4 text-sm text-gray-700">{image.description}</h3>
-      <p className="mt-1 text-lg font-medium text-black-1000 font-bold">{image.title}</p>
+      <p className="mt-1 text-lg font-medium text-gray-900 font-bold">{image.title}</p>
     </a>
   );
 }
