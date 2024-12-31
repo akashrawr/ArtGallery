@@ -61,8 +61,8 @@ export default function Gallery() {
     if (navigator.share) {
       navigator
         .share({
-          title: 'ArtyFiji',
-          text: 'rawr',
+          title: 'john doe',
+          text: 'Painter',
           url: 'https://artyfiji.vercel.app/',
         })
         .then(() => console.log('Successful share'))
