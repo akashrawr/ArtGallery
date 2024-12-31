@@ -82,7 +82,7 @@ export default function Gallery() {
 
       <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="mb-6 pl-2 border-b-8 border-blue-800 flex items-center lg:items-stretch flex-row">
-          <h1 className="select-none transition transform origin-left -skew-x-6 inline-block p-2 text-5xl bg-gradient-to-tr from-blue-800 to-blue-500 text-transparent bg-clip-text font-extrabold">
+          <h1 className="select-none transition transform origin-left -skew-x-6 inline-block p-2 uppercase text-5xl bg-gradient-to-tr from-blue-800 to-blue-500 text-transparent bg-clip-text font-extrabold">
             ArtyFiji
           </h1>
           <div className="justify-end flex flex-1 pt-4 pr-8 pb-4">

@@ -81,14 +81,14 @@ export default function Gallery() {
       </Head>
 
       <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:max-w-7xl lg:px-8">
-        <div className="mb-6 pl-2 border-b-8 border-blue-800 flex items-center lg:items-stretch flex-row">
-          <h1 className="select-none transition transform origin-left -skew-x-6 inline-block p-2 text-5xl bg-gradient-to-tr from-blue-800 to-blue-500 text-transparent bg-clip-text font-extrabold">
+        <div className="mb-6 pl-2 border-b-8 border-green-800 flex items-center lg:items-stretch flex-row">
+          <h1 className="select-none transition transform origin-left -skew-x-6 inline-block p-2 uppercase text-5xl bg-gradient-to-tr from-green-800 to-green-500 text-transparent bg-clip-text font-extrabold">
             ArtyFiji
           </h1>
           <div className="justify-end flex flex-1 pt-4 pr-8 pb-4">
             <button
               onClick={openModal}
-              className="text-base hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer hover:bg-blue-700 hover:text-blue-100 bg-blue-50 text-blue-700 border duration-200 ease-in-out border-blue-600 transition"
+              className="text-base hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer hover:bg-emerald-700 hover:text-emerald-100 bg-emerald-50 text-emerald-700 border duration-200 ease-in-out border-emerald-600 transition"
             >
               <div className="flex leading-5">
                 <svg
@@ -156,6 +156,17 @@ export default function Gallery() {
                   >
                     Share this link
                   </Dialog.Title>
+                  <p>
+                    If your browser does not support{' '}
+                    <a
+                      target="_blank"
+                      className="underline text-sky-600"
+                      href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share"
+                    >
+                      Web Share API
+                    </a>
+                    , please try Chrome or Microsoft Edge
+                  </p>
                   <div className="mt-2">
                     <div className="border-2 border-gray-200 flex justify-between items-center mt-4 py-2">
                       <svg
@@ -173,7 +184,7 @@ export default function Gallery() {
                         className="w-full outline-none bg-transparent"
                         type="text"
                         placeholder="link"
-                        value="https://artyfiji.vercel.app/"
+                        value="https://image-gallery-gray.vercel.app/"
                       />
 
                       <button
