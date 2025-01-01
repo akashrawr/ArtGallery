@@ -1,15 +1,6 @@
 import React from 'react';
 import BlurImage from './BlurImage';
 
-// Define the ImageType type
-type ImageType = {
-  id: number;
-  href: string;
-  imageSrc: string;
-  title: string;
-  description: string;
-};
-
 // Update the type from Image[] to ImageType[]
 const GalleryGrid = ({ images }: { images: ImageType[] }) => {
   return (
