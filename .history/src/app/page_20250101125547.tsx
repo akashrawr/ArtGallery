@@ -1,11 +1,12 @@
-'use client'; // This is a client component
+'use client'; // This ensures that this component runs on the client-side
 
 import React, { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import Head from 'next/head';
-import GalleryHeader from './components/GalleryHeader';
-import GalleryGrid from './components/GalleryGrid';
-import ShareModal from './components/ShareModal';
+import GalleryHeader from './GalleryHeader';
+import GalleryGrid from './GalleryGrid';
+import ShareModal from './ShareModal';
+import { useRouter } from 'next/router'; // Ensure useRouter is only used in client components
 
 type Image = {
   id: number;
@@ -27,6 +28,14 @@ export default function GalleryPage() {
   }
 
   const supabase = createClient(supabaseUrl, supabaseKey);
+
+  // Initialize useRouter here (client-side)
+  const router = useRouter();
+
+  // Function to navigate to the login page
+  const navigateToLogin = () => {
+    router.push('/loginpage'); // Navigate to the login page
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,7 +62,8 @@ export default function GalleryPage() {
       </Head>
 
       <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:max-w-7xl lg:px-8">
-        <GalleryHeader openModal={() => setIsOpen(true)} />
+        {/* Pass navigateToLogin as a prop to GalleryHeader */}
+        <GalleryHeader openModal={() => setIsOpen(true)} navigateToLogin={navigateToLogin} />
         <GalleryGrid images={images} />
       </div>
 

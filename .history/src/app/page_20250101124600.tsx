@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import Head from 'next/head';
-import GalleryHeader from './components/GalleryHeader';
-import GalleryGrid from './components/GalleryGrid';
-import ShareModal from './components/ShareModal';
+import GalleryHeader from './GalleryHeader';
+import GalleryGrid from './GalleryGrid';
+import ShareModal from './ShareModal';
 
 type Image = {
   id: number;
