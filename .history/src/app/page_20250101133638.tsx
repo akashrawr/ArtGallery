@@ -1,11 +1,11 @@
-'use client'; // This is a client component
-
 import React, { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import Head from 'next/head';
-import GalleryHeader from './GalleryHeader';
-import GalleryGrid from './GalleryGrid';
-import ShareModal from './ShareModal';
+import GalleryHeader from './components/GalleryHeader';
+
+import ShareModal from './components/ShareModal';
+import { useRouter } from 'next/router';
+import BlurImage from './components/BlurImage'; // Import the BlurImage component
 
 type Image = {
   id: number;
@@ -15,7 +15,7 @@ type Image = {
   description: string;
 };
 
-export default function GalleryPage() {
+export default function Page() {
   const [isOpen, setIsOpen] = useState(false);
   const [images, setImages] = useState<Image[]>([]);
 
@@ -27,6 +27,7 @@ export default function GalleryPage() {
   }
 
   const supabase = createClient(supabaseUrl, supabaseKey);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,8 +54,12 @@ export default function GalleryPage() {
       </Head>
 
       <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:max-w-7xl lg:px-8">
-        <GalleryHeader openModal={() => setIsOpen(true)} />
-        <GalleryGrid images={images} />
+        
+        {/* Example usage of BlurImage */}
+        {images.map((image) => (
+          <BlurImage key={image.id} image={image} />
+        ))}
+        
       </div>
 
       <ShareModal isOpen={isOpen} closeModal={() => setIsOpen(false)} />
